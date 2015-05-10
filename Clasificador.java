@@ -55,11 +55,11 @@ public class Clasificador  extends BaseSinfonierBolt {
         // TO-DO: Write your code here. This code runs once by each input tuple
         // You can use the following functions to process it
 
-        JSONArray original=this.getJson();
+          Map<String, Object> json=this.getJson();
 
         // salida=new JSONArray();  
         
-        String texto= original.getString("text");
+        String texto= json.get("text");
 
         //String id= original.getString("id");
 
