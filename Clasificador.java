@@ -23,58 +23,57 @@
     THE SOFTWARE.
 */
 
+package com.sinfonier.bolts;
 
-package com.sinfonier.spouts;
+public class Clasificador  extends BaseSinfonierBolt {
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+    //TO-DO: Declare variables
 
-public class Clasificador extends BaseSinfonierSpout {
+    private String var;
+    private String name;
 
-    private File file;
-    private Scanner sc;
-
-    public (String spoutName, String xmlPath) {
-        super(spoutName, xmlPath);
-
+    public (String xmlFile) {
+        super(xmlFile);
     }
 
-    public void useropen(){
+    @Override
+    public void userprepare() {
 
-        // TO-DO: Init values. Code here runs once.
-        // In Spouts this function is very important. Must get an object than can
-        // iterate to use it in usernextTuple()
+        // TO-DO: Init values. Code here runs once
 
-        file = new File((String)this.getParam("file"));
-        this.addField("erser");
-        try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        this.var = "value";
 
+        // Get Param (get value of "param_name" from input box)
+        this.name = (String)this.getParam("param_name");
     }
 
-    public void usernextTuple(){
+    @Override
+    public void userexecute() {
 
-        // TO-DO: Write code here. This code reads an input tuple by each execution
-        // You can use the same functions as in the Bolts to process it.
-        // Tipically is to use this.addField to build the Tuple to emit.
+        // TO-DO: Write your code here. This code runs once by each input tuple
+        // You can use the following functions to process it
 
-        if (sc.hasNextLine()) {
-            String row = sc.nextLine();
-            System.out.println("SC ROW: "+row);
-            String[] splitted = row.split(",");
-            this.addField(splitted[0], splitted[1]);
+        // Add field
+        this.addField("name","Peter");
 
-            this.emit();
-        }
+        // Get field (return a String)
+        this.getField("country");
 
+        // Remove field
+        this.removeField(this.var);
 
+        // Exists field (return Boolean)
+        this.existsField("lastname");
+
+        
+        // Mandatory. Emit the tuple to the next bolt
+        this.emit();
+        
     }
-    public void userclose() {
+    public void usercleanup() {
     }
+
 }
+
 
 
