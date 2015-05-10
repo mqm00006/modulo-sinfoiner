@@ -47,6 +47,7 @@ public class Clasificador extends BaseSinfonierSpout {
         // iterate to use it in usernextTuple()
 
         file = new File((String)this.getParam("file"));
+        this.addField("erser");
         try {
             sc = new Scanner(file);
         } catch (FileNotFoundException e) {
