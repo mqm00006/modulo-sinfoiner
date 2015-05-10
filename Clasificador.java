@@ -24,6 +24,7 @@
 */
 
 package com.sinfonier.bolts;
+
 import java.util.Map;
 
 public class Clasificador  extends BaseSinfonierBolt {
@@ -42,10 +43,10 @@ public class Clasificador  extends BaseSinfonierBolt {
 
         // TO-DO: Init values. Code here runs once
 
-        /*this.var = "value";
+        //this.var = "value";
 
         // Get Param (getField value of "param_name" from input box)
-        this.name = (String)this.getParam("param_name");*/
+        //this.name = (String)this.getParam("param_name");
     }
 
     @Override
