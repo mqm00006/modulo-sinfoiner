@@ -63,7 +63,7 @@ public class Clasificador  extends BaseSinfonierBolt {
 
         String id= original.getString("id");
 
-        this.setJson(salida);
+        this.setJSon(salida);
 
         this.addField("Tweet",texto);
         this.addField("id",id);
