@@ -24,8 +24,7 @@
 */
 
 package com.sinfonier.bolts;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import java.util.map;
 
 public class Clasificador  extends BaseSinfonierBolt {
 
