@@ -24,13 +24,15 @@
 */
 
 package com.sinfonier.bolts;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Clasificador  extends BaseSinfonierBolt {
 
     //TO-DO: Declare variables
 
     private String var;
-    private String name;
+
 
     public (String xmlFile) {
         super(xmlFile);
@@ -41,10 +43,10 @@ public class Clasificador  extends BaseSinfonierBolt {
 
         // TO-DO: Init values. Code here runs once
 
-        this.var = "value";
+       /* this.var = "value";
 
-        // Get Param (get value of "param_name" from input box)
-        this.name = (String)this.getParam("param_name");
+        // Get Param (getField value of "param_name" from input box)
+        this.name = (String)this.getParam("param_name");*/
     }
 
     @Override
@@ -53,18 +55,18 @@ public class Clasificador  extends BaseSinfonierBolt {
         // TO-DO: Write your code here. This code runs once by each input tuple
         // You can use the following functions to process it
 
-        // Add field
-        this.addField("name","Peter");
+        JSONArray original= new JSONArray(this.getJson);
 
-        // Get field (return a String)
-        this.getField("country");
+        JSONArray salida=new JSONArray();  
+        
+        String texto= original.getString("text");
 
-        // Remove field
-        this.removeField(this.var);
+        String id= original.getString("id");
 
-        // Exists field (return Boolean)
-        this.existsField("lastname");
+        this.setJson(salida);
 
+        this.addField("Tweet",texto);
+        this.addField("id",id);
         
         // Mandatory. Emit the tuple to the next bolt
         this.emit();
