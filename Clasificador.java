@@ -59,7 +59,7 @@ public class Clasificador  extends BaseSinfonierBolt {
 
         // salida=new JSONArray();  
         
-        String texto= json.get("text");
+        String texto= (String) json.get("text");
 
         //String id= original.getString("id");
 
