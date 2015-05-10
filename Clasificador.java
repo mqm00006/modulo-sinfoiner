@@ -24,7 +24,7 @@
 */
 
 package com.sinfonier.bolts;
-import java.util.map;
+import java.util.Map;
 
 public class Clasificador  extends BaseSinfonierBolt {
 
