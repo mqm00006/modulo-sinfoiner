@@ -57,17 +57,17 @@ public class Clasificador  extends BaseSinfonierBolt {
 
         JSONArray original= new JSONArray(this.getJson);
 
-        JSONArray salida=new JSONArray();  
+        // salida=new JSONArray();  
         
         String texto= original.getString("text");
 
-        String id= original.getString("id");
+        //String id= original.getString("id");
 
-        this.setJSon(salida);
-        system.out.println("sddsdsd");
+        //this.setJSon(salida);
 
-        this.addField("Tweet",texto);
-        this.addField("id",id);
+
+        //this.addField("Tweet",texto);
+        //this.addField("id",id);
         
         // Mandatory. Emit the tuple to the next bolt
         this.emit();
