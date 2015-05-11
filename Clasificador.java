@@ -52,9 +52,19 @@ public class  extends BaseSinfonierBolt {
     public void userexecute() {
 
 
-        Map<String,Object> = new HashMap<String,Object>();
+        
+        try{
+            
+            Map<String,Object> = new HashMap<String,Object>();
+			String fieldcontent = (String) this.getField(this.field);
+			if (fieldcontent.endsWith(this.filter)){
+				this.emit();
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 
-        this.emit();
+       
         
     }
     public void usercleanup() {
