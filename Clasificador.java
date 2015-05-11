@@ -25,7 +25,7 @@
 
 package com.sinfonier.bolts;
 import java.util.*;
-public class  extends BaseSinfonierBolt {
+public class Clasificador  extends BaseSinfonierBolt {
 
     //TO-DO: Declare variables
 
