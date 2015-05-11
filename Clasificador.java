@@ -55,14 +55,14 @@ public class  extends BaseSinfonierBolt {
         
         try{
             
-            Map<String,Object> = new HashMap<String,Object>();
-			String fieldcontent = (String) this.getField(this.field);
-			if (fieldcontent.endsWith(this.filter)){
-				this.emit();
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+            	Map<String,Object> = new HashMap<String,Object>();
+
+
+		this.emit();
+
+	}catch(Exception e){
+		e.printStackTrace();
+	}
 
        
         
