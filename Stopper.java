@@ -24,10 +24,8 @@ public class Stopper extends BaseSinfonierBolt {
 
     private String stopperURL;
     private String fieldToParse;
-    private Set<String> words=new HashSet<String>();
-    public Stopper(String path) {
-        
-        
+    private final Set<String> words=new HashSet<String>();
+    public Stopper(String path) {       
         super(path);
         
     }
@@ -65,6 +63,14 @@ public class Stopper extends BaseSinfonierBolt {
         
         
     }
+
+    @Override
+    public void usercleanup() {
+        
+    }
+    
+    
+    
     private void read() throws MalformedURLException, IOException
     {
         URL url= new URL(stopperURL);
@@ -81,9 +87,4 @@ public class Stopper extends BaseSinfonierBolt {
         }
         file.close();
     }
-    @Override
-    public void usercleanup() {
-        
-    }
-    
 }
