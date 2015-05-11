@@ -24,13 +24,13 @@
 */
 
 package com.sinfonier.bolts;
-
+import java.util.*;
 public class  extends BaseSinfonierBolt {
 
     //TO-DO: Declare variables
 
-    private String var;
-    private String name;
+    ;
+    private String texto;
 
     public (String xmlFile) {
         super(xmlFile);
@@ -40,33 +40,20 @@ public class  extends BaseSinfonierBolt {
     public void userprepare() {
 
         // TO-DO: Init values. Code here runs once
+        
 
-        this.var = "value";
+        
 
         // Get Param (get value of "param_name" from input box)
-        this.name = (String)this.getParam("param_name");
+        this.texto = (String)this.getField("text");
     }
 
     @Override
     public void userexecute() {
 
-        // TO-DO: Write your code here. This code runs once by each input tuple
-        // You can use the following functions to process it
 
-        // Add field
-        this.addField("name","Peter");
+        Map<String,Object> = new HashMap<String,Object>();
 
-        // Get field (return a String)
-        this.getField("country");
-
-        // Remove field
-        this.removeField(this.var);
-
-        // Exists field (return Boolean)
-        this.existsField("lastname");
-
-        
-        // Mandatory. Emit the tuple to the next bolt
         this.emit();
         
     }
