@@ -31,8 +31,8 @@ public class ClasificadorDeOpinione  extends BaseSinfonierBolt {
 
     
     private String texto;
-
-    public (String xmlFile) {
+    
+    public ClasificadorDeOpinione(String xmlFile) {
         super(xmlFile);
     }
 
@@ -46,6 +46,7 @@ public class ClasificadorDeOpinione  extends BaseSinfonierBolt {
 
         // Get Param (get value of "param_name" from input box)
         this.texto = (String)this.getField("text");
+        
     }
 
     @Override
@@ -55,10 +56,13 @@ public class ClasificadorDeOpinione  extends BaseSinfonierBolt {
         
         try{
             
-            	Map<String,Object> x=new HashMap<String,Object>();
+            	
+            
+            //Map<String,Object> json2=new HashMap<String,Object>();
+                
 
-
-		this.emit();
+            
+            this.emit();    
 
 	}catch(Exception e){
 		e.printStackTrace();
@@ -67,6 +71,13 @@ public class ClasificadorDeOpinione  extends BaseSinfonierBolt {
        
         
     }
+
+    @Override
+    public void usercleanup() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 }
 
