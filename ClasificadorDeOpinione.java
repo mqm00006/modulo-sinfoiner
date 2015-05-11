@@ -55,7 +55,7 @@ public class ClasificadorDeOpinione  extends BaseSinfonierBolt {
         
         try{
             
-            	Map<String,Object> = new HashMap<String,Object>();
+            	Map<String,Object> x=new HashMap<String,Object>();
 
 
 		this.emit();
