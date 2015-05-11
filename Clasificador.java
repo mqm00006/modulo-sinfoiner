@@ -29,7 +29,7 @@ public class  extends BaseSinfonierBolt {
 
     //TO-DO: Declare variables
 
-    ;
+    
     private String texto;
 
     public (String xmlFile) {
